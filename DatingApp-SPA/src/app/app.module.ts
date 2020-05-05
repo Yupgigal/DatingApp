@@ -24,6 +24,10 @@ import { MemberDetailResolver } from './_resolvers/member-details.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { NgxImageGalleryModule } from 'ngx-image-gallery';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { AuthGuard } from './_guards/auth.guard';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 
 
@@ -46,7 +50,8 @@ export function tokenGetter()
       MemberListComponent,
       MessagesComponent,
       MemberCardComponent,
-      MemberDetailsComponent
+      MemberDetailsComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,
@@ -70,6 +75,9 @@ export function tokenGetter()
       AuthService,
       MemberDetailResolver,
       MemberListResolver,
+      MemberEditResolver,
+      AuthGuard,
+      PreventUnsavedChanges
      // {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [

@@ -45,7 +45,7 @@ export class MemberDetailsComponent implements OnInit {
           imageAnimation: NgxGalleryAnimation.Slide,
           preview: false
       }];
-      this.galleryImages = this.getImages();
+    this.galleryImages = this.getImages();
   }
 
   getImages() {
